@@ -1,0 +1,26 @@
+{
+
+	"manifest_version": 2,
+	"name": "bulk-download",
+	"version": "1.0",
+
+	"description": "Bulk downloading links made easy!",
+	"icons": {
+		"48": "icons/bulkDownload48.png"
+	},
+
+	"permissions": [
+		"activeTab",
+		"downloads"
+	],
+
+	"browser_action": {
+		"default_icon": "icons/bulkDownload32.png",
+		"default_title": "Bulk Download",
+		"default_popup": "popup/bulkDownload.html"
+	},
+
+	"background": {
+  		"scripts": ["background_scripts/downloader.js"]
+	}
+}
