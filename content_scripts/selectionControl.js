@@ -61,14 +61,14 @@
 	 * sends a message for the background script to
 	 * download them
 	 */
-	function downloadSelected() {
+	function downloadSelected(args) {
 		const checkedSelectors = Array.from(
 			document.querySelectorAll(".bulkDownloadLinkSelector:checked")
 		);
 		const urls = checkedSelectors.map(selector =>
 			selector.getAttribute("href")
 		);
-		browser.runtime.sendMessage({ hrefs: urls });
+		browser.runtime.sendMessage({ hrefs: urls, args: args });
 	}
 
 	/**
@@ -82,7 +82,7 @@
 			selectorsActive = false;
 			hideSelectors();
 		} else if (message.command === "downloadSelected" && selectorsActive) {
-			downloadSelected();
+			downloadSelected(message.args);
 		}
 	});
 })();
