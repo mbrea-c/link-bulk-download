@@ -8,11 +8,8 @@ function listenForClicks() {
 			browser.tabs.sendMessage(tabs[0].id, { command: "hideSelectors" });
 		}
 
-		function downloadSelected(tabs, saveAs=false) {
-			browser.tabs.sendMessage(
-				tabs[0].id, 
-				{ command: "downloadSelected", args: { saveAs: saveAs }}
-			);
+		function downloadSelected(tabs) {
+			browser.tabs.sendMessage(tabs[0].id, { command: "downloadSelected" });
 		}
 
 		if (e.target.classList.contains("showSelectors")) {
@@ -27,10 +24,6 @@ function listenForClicks() {
 			browser.tabs
 				.query({ active: true, currentWindow: true })
 				.then(downloadSelected);
-		} else if (e.target.classList.contains("downloadAs")) {
-			browser.tabs
-				.query({ active: true, currentWindow: true })
-				.then(tabs => downloadSelected(tabs, true));
 		}
 	});
 }

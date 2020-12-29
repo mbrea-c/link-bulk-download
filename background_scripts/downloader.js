@@ -1,7 +1,11 @@
 function downloader(message) {
 	hrefs = message.hrefs;
-	args = message.args;
-	hrefs.map(url => browser.downloads.download({ url: url, saveAs: args.saveAs }));
+	hrefs.map(url => {
+		filename = url
+			.split('/').pop()
+			.split('?').pop(0)
+			.split('#').pop(0);
+		browser.downloads.download({ filename: filename, url: url });
+	});
 }
-
 browser.runtime.onMessage.addListener(downloader);
