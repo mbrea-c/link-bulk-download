@@ -1,11 +1,12 @@
 function downloader(message) {
-	hrefs = message.hrefs;
-	hrefs.map(url => {
-		filename = url
-			.split('/').pop()
-			.split('?').pop(0)
-			.split('#').pop(0);
-		browser.downloads.download({ filename: filename, url: url });
-	});
+  const targets = message.targets;
+  targets.map(({ url, formatString, formatParameters }) => {
+    let filename = formatString;
+    formatParameters.map(({ format, value }) => {
+      filename = filename.replaceAll(format, value);
+    });
+    alert(filename);
+    browser.downloads.download({ filename: filename, url: url });
+  });
 }
 browser.runtime.onMessage.addListener(downloader);

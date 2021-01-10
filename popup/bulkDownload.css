@@ -1,5 +1,15 @@
-.popupButton {
+.popupButton, .popupInput {
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 }
+
+.formatStringContainer {
+	margin-top: 0.5em;
+}
+
+.popupLink {
+	font-size: 0.85rem;
+	width: 100%;
+}
+
