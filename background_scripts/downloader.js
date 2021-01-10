@@ -5,7 +5,6 @@ function downloader(message) {
     formatParameters.map(({ format, value }) => {
       filename = filename.replaceAll(format, value);
     });
-    alert(filename);
     browser.downloads.download({ filename: filename, url: url });
   });
 }
