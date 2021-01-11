@@ -6,8 +6,18 @@
 	<h1>
 		Format Strings
 	</h1>
+	<p>
+	Format strings provide a powerful way to name your downloaded files, allowing the use of information specific to each file in the saved filename by means of placeholder variables. The placeholder variables in your format string will be replaced by their corresponding value for each file you download.
+	</p>
+	<p>
+	As an instructive example, consider the format string <code>"My file is named {name} and was the {index}th file selected"</code>. If we assume that you selected the links pointing to <code>"https://example.com/foo"</code> and <code>"https://example.com/bar"</code> in that order, the downloaded files would be named:
+	</p>
+	<ul>
+		<li><code>My file is named foo and was the 1th file selected</code></li>
+		<li><code>My file is named bar and was the 2th file selected</code></li>
+	</ul>
 	<h2>
-		Available format variables
+		Available placeholder variables
 	</h2>
 	<ul>
 		<li><code>{index}</code> &mdash; Index of the selected link, in order of selection. 
@@ -15,5 +25,8 @@
 			have an index of 2, etc.</li>
 		<li><code>{name}</code> &mdash; Basename of the selected link. This is what firefox names your downloaded item when you choose "Save Link As..." by default.</li>
 	</ul>
+	<p>
+		<i>Note:</i> More placeholder variables will be added soon.
+	</p>
 </body>
 </html>
