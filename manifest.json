@@ -2,7 +2,7 @@
 
 	"manifest_version": 2,
 	"name": "bulk-download",
-	"version": "1.1.1",
+	"version": "1.2.0",
 
 	"description": "Bulk downloading links made easy!",
 	"icons": {

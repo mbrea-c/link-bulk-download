@@ -23,7 +23,14 @@
 		<li><code>{index}</code> &mdash; Index of the selected link, in order of selection. 
 			That is, the first link selected will have an index of 1, the second will 
 			have an index of 2, etc.</li>
-		<li><code>{name}</code> &mdash; Basename of the selected link. This is what firefox names your downloaded item when you choose "Save Link As..." by default.</li>
+		<li><code>{name}</code> &mdash; Basename of the selected link. This is the
+			last segment of the URI path, stripped away of the query and fragment
+			components. E.g., the URI <code>"https://example.com/foo?q=test#somefragment"</code>
+			would have basename <code>foo</code>.
+		</li>
+		<li><code>{linkText}</code> &mdash; Visible text on the selected link. This
+			is (most likely) what firefox names your downloaded item when you choose
+			"Save Link As..." by default.</li>
 	</ul>
 	<p>
 		<i>Note:</i> More placeholder variables will be added soon.
